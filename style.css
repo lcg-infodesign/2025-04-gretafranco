@@ -1,8 +1,165 @@
-html, body {
-  margin: 0;
+ body {
+      background: #000000;
+      font-family: "Helvetica", sans-serif;
+      color: #FE820A;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      margin-top: -10px;
+      font-weight: 300;
+      font-size: smaller;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      margin-top: -10px;
+      font-weight: 300;
+      font-size:x-small;
+      letter-spacing: 0.5px;
+    }
+    #map-card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      padding: 20px;
+      width: 90%;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #canvas-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+       border: 3px solid #000000;
+      position: relative;
+      min-height: 240px;
+    }
+    canvas { display:block; }
+
+    #error-overlay {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: rgba(0,0,0,0.6);
+      color: #f88;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: none;
+      z-index: 20;
+      font-size: 14px;
+    }
+
+    #legend {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0,0,0,0.7);
+  border: 3px solid #FE820A;
+  border-radius: 8px;
+  color: white;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
+  text-align: left;
+  max-width: 600px;
+}
+#legend ul {
+  margin: 6px 0 0 16px;
   padding: 0;
 }
 
-canvas {
-  display: block;
+/*box contenitore vulcani*/
+#volcano-list-box {
+  margin-top: 30px;
+  background: #111;
+  border: 2px solid #FE820A;
+  padding: 20px;
+  border-radius: 14px;
+  width: 100%;
+  box-sizing: border-box; /*impedisce sbordamenti*/
+  overflow: hidden; /*taglia eventuali esuberi */
+}
+
+/*barra di ricerca*/
+#search-bar {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #666;
+  font-size: 16px;
+  font-family: Poppins;
+  background: #222;
+  color: white;
+  box-sizing: border-box;
+}
+
+/*contenitore vulcano scrollabile*/
+#volcano-scroll-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;   /*nessuno sbordo*/
+  position: relative;
+}
+
+/*bottoni*/
+.scroll-btn {
+  background: #FE820A;
+  color: black;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/*lista vulcani disposti in orizzontale*/
+#volcano-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: calc(100% - 100px); /*evita che i bottoni spingano fuori*/
+  box-sizing: border-box;
+}
+
+/*card vulcano*/
+.vulcano-card {
+  min-width: 150px;
+  background: #222;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Poppins;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  flex-shrink: 0; /*per lo scroll*/
+}
+
+.vulcano-card:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.vulcano-card:hover span {
+  text-decoration: underline;
 }

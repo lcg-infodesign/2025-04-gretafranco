@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Assignment 3</title>
+ <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <title>Sketch</title>
+</head>
+<body>
+  <h1>Assignment 3</h1>
+<h2>Crea glifi a partire da un dataset.
+Stabilisci un chiaro processo di codifica/decodifica dei dati rappresentati
+</h2>
+<div id="map-card">
+  <div id="canvas-wrapper">
+    <div id="error-overlay"></div>
+  </div>
+  <div id="legend"></div>
+</div>
+<br>
+<div id="volcano-list-box">
+  <h2>Tutti i vulcani</h2>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <input type="text" id="search-bar" placeholder="Cerca un vulcano...">
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
+  <div id="volcano-scroll-container">
+    <button id="scroll-left" class="scroll-btn">◀</button>
+    <div id="volcano-list"></div>
+    <button id="scroll-right" class="scroll-btn">▶</button>
+  </div>
+</div>
 
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+<br>
+ <h3>Laboratorio di Computer Grafica - Information Design. <br>
+  Greta Franco
+</h3>
+</body>
 </html>
